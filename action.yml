@@ -1,0 +1,46 @@
+name: "Bump Versions"
+description: "A GitHub Action to easily bump version files"
+# author: "Tommaso De Rossi" original author of https://github.com/remorses/bump-version
+author: "Paruyr Muradian"
+inputs:
+  version_file:
+    description: "Version file to bump path"
+    default: "VERSION"
+    required: false
+  version_name:
+    description: 'Version number'
+    required: false
+    default: ''
+  version_code:
+    description: 'Version code'
+    required: false
+    default: ''
+  wearable_version_name:
+    description: 'Wearable version number'
+    required: false
+    default: ''
+  wearable_version_code:
+    description: 'Wearable version code'
+    required: false
+    default: ''
+  brand:
+    description: 'brand'
+    required: false
+    default: 'Nissan'
+  region:
+    description: 'region'
+    required: false
+    default: 'nna'
+  is_CCS2:
+    description: 'is CCS2 build'
+    required: false
+    default: 'no'
+outputs:
+  version:
+    description: New version
+  prefix:
+    description: Prefix if set
+runs:
+  using: "node12"
+  main: "lib/main.js"
+
